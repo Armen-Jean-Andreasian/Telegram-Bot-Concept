@@ -1,0 +1,42 @@
+Installment:
+    pip install pyTelegramBotAPI
+
+Usage:
+    1. Text BotFather on Telegram
+        - @BotFather | https://t.me/BotFather
+            - Message:
+                /newbot
+            - Enter the name of your bot
+            - Provide a username:
+                example: TetrisBot or tetris_bot
+            - Copy the HTTP token
+    2. Paste it into TOKEN in main.py
+
+
+BotFather Commands:
+    /setuserpic : change profile photo
+    /setname : change the bot's name
+    /setdescription: change bot description
+    /setabout text: change bot about info
+
+    /token : generate a new token
+    /revoke : revoke the token
+
+
+Code snippets:
+    - getting the info of the user
+        user_info = message.from_user
+
+        output: {'id': 41243245352, 'is_bot': False, 'first_name': '123', 'username': '721', 'last_name': None, 'language_code': 'eng', 'can_join_groups': None, 'can_read_all_group_messages': None, 'supports_inline_queries': None, 'is_premium': None, 'added_to_attachment_menu': None}
+        output type: <class 'telebot.types.User'>
+
+            convert to dict: user_dict = vars(user_info)
+
+Markdown modes for messages:
+    - operator: parse_mode=''
+    - modes:
+        - html
+            parse_mode='html'
+        - markdown
+            parse_mode='markdown'
+    - source: https://core.telegram.org/api/entities#allowed-entities
